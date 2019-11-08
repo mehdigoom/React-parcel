@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Route, Redirect } from "react-router-dom";
+
 //Typescript
 interface Props {
   title: string;
@@ -9,6 +11,8 @@ interface Props {
 interface State {
   email: string;
   password: string;
+  user: object;
+  userIsDefined: boolean;
 }
 
 class Login extends React.Component<Props, State> {
@@ -17,29 +21,49 @@ class Login extends React.Component<Props, State> {
 
     this.state = {
       email: "email@test.com",
-      password: "derpderp"
+      password: "derpderp",
+      user: {},
+      userIsDefined: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    // window.localStorage.clear();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
 
     fetch("https://jsonplaceholder.typicode.com/users", {
       method: "GET",
       headers: {
-        'Content-Type': 'application/json'
-      },
+        "Content-Type": "application/json"
+      }
     }).then(data => {
       data.json().then(results => {
-          console.log(results);
-      })
+        this.setState({
+          user: results[0],
+          userIsDefined: true
+        });
+
+        window.localStorage.setItem("user", results[0]);
+      });
     });
   }
 
   render() {
+    if (this.state.userIsDefined) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/"
+          }}
+        />
+      );
+    }
+
     return (
       <React.Fragment>
         <h1>Je suis un titre</h1>
