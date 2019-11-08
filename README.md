@@ -19,6 +19,7 @@ Node is required only to build the project. It is not required to run it.
 
 
 **root**
+
 ------├── package.json 
 
 ------├── package-lock.json 
