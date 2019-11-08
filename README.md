@@ -1,5 +1,22 @@
 Front best practices - Typescript - jest - enzyme - parcel - react router - fetch / axios - less / sass | Dev - prod
+-----------------------------
+## How to build
 
+### For developement
+
+Get Node.js for your platform (https://nodejs.org/en/)
+Node is required only to build the project. It is not required to run it.
+
+1. `npm install`
+2. `npm run dev`
+
+### For production
+
+1. `npm install`
+2. `npm run build`
+
+
+---------------------------
 #Architecture du front
 
 root
@@ -37,6 +54,6 @@ Il va traduire nos fichiers par exemple les .less en .css.
 Parcel est livrer avec un sourcemap.qui permert de mapper les fichier de destination avec les fichier source pour ajuster le code par le suite.
 Parcel recharge le render de la page a chaque sauvgarde du code.
  -------------------
- 
+
 
 
