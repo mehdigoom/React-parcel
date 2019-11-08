@@ -27,12 +27,11 @@ class Login extends React.Component<Props, State> {
     event.preventDefault();
     console.log(this.state);
 
-    fetch("http://localhost:4000/public/login", {
-      method: "POST",
+    fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "GET",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
     }).then(data => {
       data.json().then(results => {
           console.log(results);
