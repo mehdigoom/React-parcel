@@ -1,5 +1,5 @@
 Front best practices - Typescript - jest - enzyme - parcel - react router - fetch / axios - less / sass | Dev - prod
------------------------------
+
 ## How to build
 
 ### For developement
@@ -16,8 +16,7 @@ Node is required only to build the project. It is not required to run it.
 2. `npm run build`
 
 
----------------------------
-#Architecture du front
+
 
 root
       ├── package.json 
