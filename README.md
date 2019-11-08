@@ -19,13 +19,13 @@ Node is required only to build the project. It is not required to run it.
 
 
 root
-      ├── package.json 
-      ├── package-lock.json 
-      ├── node_modules
-      ├── src (localhost:1234)
-      │   └── index.js
-      ├── .gitignore
-      └── README.md
+------├── package.json 
+------├── package-lock.json 
+------├── node_modules
+------├── src (localhost:1234)
+------│----└── index.js
+------├── .gitignore
+------└── README.md
 
 1. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
